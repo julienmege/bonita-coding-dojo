@@ -74,7 +74,7 @@ POST {“status”: “approved”, “comment”: “Ok”} ../API/bpm/userTask
 ```
 Use fragment to have comment per task
 
-/!\ POST doesn't work in the UI Designer due to some redirection issues
+/!\ POST doesn't work in the UI Designer during preview due to some redirection issues but it should work fine once in the Portal.
 
 ### Step 6
 Create living app to let helen kelly use the Review Vacation Requests application.
