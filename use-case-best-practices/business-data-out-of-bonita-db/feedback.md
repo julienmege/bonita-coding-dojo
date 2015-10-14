@@ -23,7 +23,7 @@ select currval('leave_request_request_id_seq');
 
 ### Query builder 
 
-* manque tooltip pour connaitre variable '${...}'
+* manque tooltip pour connaitre la syntaxe des variables '${...}'
 * bouton test ne marche pas si il y a des variables
 * pas accès au contrat en connecteur de sortie
 
