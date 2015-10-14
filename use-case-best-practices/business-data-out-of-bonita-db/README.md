@@ -66,7 +66,9 @@ RTT
 Annual leave 
 ```
 
-request_id serial fiel create implicite sequence leave_request_request_id_seq
+### Sql tips
+
+setting request_id type to *serial* creates a sequence with default name "leave_request_request_id_seq"
 
 ```sql
 CREATE SEQUENCE leave_request_request_id_seq
@@ -76,8 +78,6 @@ CREATE SEQUENCE leave_request_request_id_seq
   START 1
   CACHE 1;
 ```  
-
-### Sql tips
  
 get next sequence value:
 ```sql
