@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="deploy on localhost" default="deployOnLocalHost" basedir=".">
+    <description>
+       deploy api extension on running engine
+    </description>
+
+    <!--all jar -->
+    <path id="quick.ref">
+        <fileset dir="target/dependency" includes="*jar"/>
+    </path>
+
+    <target name="_zip">
+        <echo message="============================================"/>
+        <fail unless="page" message="no page param"/>
+        <fail unless="folder" message="no folder param"/>
+
+        <echo message="zip custom page for page:${page}"/>
+
+        <property name="zipFile" value="${basedir}/deploy/custompage/custompage_${page}.zip"/>
+        <delete file="${zipFile}" verbose="true" failonerror="false"/>
+        <zip destfile="${zipFile}" basedir="${basedir}/customPage/${folder}"/>
+
+        <echo message="zip file: ${zipFile}"/>
+        <echo message="============================================"/>
+    </target>
+
+    <target name="deployOrganization">
+        <echo message="=== deploy organization ==="/>
+        <java classname="org.bonitasoft.tools.QuickstartInitializer" classpath="${toString:quick.ref}">
+            <!--<sysproperty key="server.url" value="http://192.168.0.200:8080"/>-->
+            <!--<sysproperty key="server.url" value="http://localhost:8080"/>-->
+            <arg value="deploy/organization"></arg>
+        </java>
+    </target>
+
+    <target name="deployProfileSP">
+        <echo message="=== deploy organization ==="/>
+        <java classname="com.bonitasoft.tools.QuickstartInitializerSP" classpath="${toString:quick.ref}">
+            <!--<sysproperty key="server.url" value="http://192.168.0.200:8080"/>-->
+            <!--<sysproperty key="server.url" value="http://localhost:8080"/>-->
+            <arg value="deploy/profile"></arg>
+        </java>
+    </target>
+
+    <target name="deployOnLocalHost">
+        <echo message="============================================"/>
+
+
+        <!--# Community edition:-->
+        <!--java -Dserver.url=http://localhost:8080 -cp $MY_CP org.bonitasoft.tools.QuickstartInitializer $1-->
+
+        <!--# SP Editions:-->
+        <!--#java -Dserver.url=http://localhost:8080 -cp $MY_CP com.bonitasoft.tools.QuickstartInitializerSP $1-->
+        <!--<path id="quick.ref">-->
+        <!--<fileset dir="target/dependency" includes="*jar"/>-->
+        <!--</path>-->
+
+        <echo message="running deployer"/>
+
+        <java classname="org.bonitasoft.tools.QuickstartInitializer" classpath="${toString:quick.ref}">
+            <sysproperty key="server.url" value="http://localhost:8080"/>
+            <arg value="target"></arg>
+            <arg value="-clean"></arg>
+            <!--<arg value="-Dserver.url="/>-->
+        </java>
+
+
+        <echo message="============================================"/>
+    </target>
+
+
+
+
+
+
+
+
+</project>
