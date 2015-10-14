@@ -32,11 +32,12 @@ COMMENT ON COLUMN request_kind.kind IS 'business constant';
 
 request_kind contains business constants:
 
+```
 kind         
 -------------
 RTT          
 Annual leave 
-
+```
 
 request_id serial fiel create implicite sequence leave_request_request_id_seq
 
