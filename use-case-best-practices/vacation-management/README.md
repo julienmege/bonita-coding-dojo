@@ -31,9 +31,9 @@ Topics: Living application, custom page, BDM & rest api extension
 
 ### Step 1
 Build the UI which list helen.kelly tasks
-URL to grad Review request for current user
-Current user: `../API/system/session/current`
-Task Review request: `../API/bpm/humanTask?p=0&c=10&o=priority=DESC&f=state=ready&f=user_id={{user.user_id}}&f=name=Review Request`
+- URL to grad Review request for current user
+- Current user: `../API/system/session/current`
+- Task Review request: `../API/bpm/humanTask?p=0&c=10&o=priority=DESC&f=state=ready&f=user_id={{user.user_id}}&f=name=Review Request`
 
 /!\ Don't waste to much time on approve/refuse all request tool bar.
 
