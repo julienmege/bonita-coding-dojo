@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.bonitasoft.engine:bonita-client:7.2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bonitasoft/engine/bonita-client/7.2.0-SNAPSHOT/bonita-client-7.2.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bonitasoft/engine/bonita-client/7.2.0-SNAPSHOT/bonita-client-7.2.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bonitasoft/engine/bonita-client/7.2.0-SNAPSHOT/bonita-client-7.2.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

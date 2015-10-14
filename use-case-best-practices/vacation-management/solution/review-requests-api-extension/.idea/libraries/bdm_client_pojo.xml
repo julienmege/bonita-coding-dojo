@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bdm-client-pojo">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/bdm-client-pojo.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/bdm-client-pojo.jar!/" />
+    </SOURCES>
+  </library>
+</component>
