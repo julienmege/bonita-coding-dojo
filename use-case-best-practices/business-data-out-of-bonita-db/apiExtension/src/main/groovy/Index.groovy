@@ -11,6 +11,9 @@ import static java.sql.DriverManager.registerDriver
 class Index implements RestApiController {
 
     RestApiResponse doHandle(HttpServletRequest request, PageResourceProvider pageResourceProvider, PageContext pageContext, RestApiResponseBuilder apiResponseBuilder, RestApiUtil restApiUtil) {
+
+        // getMyLeaveRequest
+
         String queryId = request.getParameter "queryId"
         if (queryId == null) {
             return buildErrorResponse(apiResponseBuilder, "the parameter queryId is missing",restApiUtil.logger)
@@ -20,6 +23,13 @@ class Index implements RestApiController {
             return buildErrorResponse(apiResponseBuilder, "the queryId does not refer to an existing query", restApiUtil.logger)
         }
         Map<String, String> params = getSqlParameters request
+
+
+        if ("getMyLeaveRequest".equals(queryId)){
+            params.put("userId",pageContext.getApiSession().userName)
+        }
+
+
         Sql sql = buildSql pageResourceProvider
         try {
             def rows = params.isEmpty() ? sql.rows(query) : sql.rows(query, params)
