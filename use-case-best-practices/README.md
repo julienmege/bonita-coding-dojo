@@ -22,11 +22,13 @@ and you need to generate a [license](https://v2.customer.bonitasoft.com/license/
 ##Step by step Exercice:
 
 1- import the .bos file contains in the "vacation-management" folder.
-it contains all the process and the organization to create a vacation request, and the associated business data.
+it contains all the process, BDM and the organization to manage vacation request.
 
 2- Start the process [InitiateVacationAvailable] to setup the number of vacations for the members of the organization.
 
-3- 
+3- implement the rest API that build an object based on [Vacation request] and [Vacation business data].
+
+4- implement the custom page using the UI-Designer base on the previous Rest API
 
 
 
