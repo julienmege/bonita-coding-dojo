@@ -4,6 +4,27 @@
 
 * leave request with Postgres business database
 
+
+## Use case
+
+* create a contract on task "Submit a new leave request"
+    - startDate (DATE)
+    - endDate (DATE)
+    - kind (TEXT)
+    
+* create a form using UI Designer
+    
+* use postgres database connector to insert data and set process variable with the generated request_id
+
+* bonus: add living app to display requests using examples: [page-apiExtensionDatasourceViewer.zip](page-apiExtensionDatasourceViewer.zip) and [Application_Data.xml](Application_Data.xml)
+
+
+## Setup
+
+* import .bos downloaded from http://www.bonitasoft.com/for-you-to-read/process-library/employee-leave-management : [leave-management-bpmn-model.bos](leave-management-bpmn-model.bos)
+* parameters to connect to businessdata base : [postgresql.properties](postgresql.properties)
+* postgres driver : [driver/postgresql-9.3-1102-jdbc41.jar](driver/postgresql-9.3-1102-jdbc41.jar)
+
 ## database model
 
 ```sql
@@ -65,23 +86,3 @@ INSERT INTO "leave_request" ("user_id", "start_date", "end_date",
 
 select currval('leave_request_request_id_seq');
 ```
-
-## Setup
-
-* import .bos downloaded from http://www.bonitasoft.com/for-you-to-read/process-library/employee-leave-management : [leave-management-bpmn-model.bos](leave-management-bpmn-model.bos)
-* parameters to connect to businessdata base : [postgresql.properties](postgresql.properties)
-* postgres driver : [driver/postgresql-9.3-1102-jdbc41.jar](driver/postgresql-9.3-1102-jdbc41.jar)
-
-
-## Use case
-
-* create a contract on task "Submit a new leave request"
-    - startDate (DATE)
-    - endDate (DATE)
-    - kind (TEXT)
-    
-* create a form using UI Designer
-    
-* use postgres database connector to insert data and set process variable with the generated request_id
-
-* bonus: add living app to display requests using examples: [page-apiExtensionDatasourceViewer.zip](page-apiExtensionDatasourceViewer.zip) and [Application_Data.xml](Application_Data.xml)
