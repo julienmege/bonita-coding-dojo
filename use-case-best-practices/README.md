@@ -16,7 +16,7 @@ and you need to generate a [license](https://v2.customer.bonitasoft.com/license/
 
 ##Implementation overview:
 
-
+![exercice](/use-case-best-practices/vacation-management/part1_overview.jpg?raw=true "exercice overview") 
 
 
 ##Step by step Exercice:
