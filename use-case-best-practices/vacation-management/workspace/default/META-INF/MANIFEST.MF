@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: default
-Bundle-SymbolicName: default
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Bonitasoft S.A.
-Require-Bundle: javax.persistence;bundle-version="2.0.3",
- org.bonitasoft.studioEx.console.libs
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
