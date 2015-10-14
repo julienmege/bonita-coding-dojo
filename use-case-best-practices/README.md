@@ -9,7 +9,7 @@ and you need to generate a [license](https://v2.customer.bonitasoft.com/license/
 ##Use case description:
 
 - login as walter.bates.
-- create a vacaction request (that create a [review task], and the related [business object]). 
+- create a vacation request (that create a [review task], and the related [business object]). 
 - then logout/login as helen.kelly to review the vacation request into a custom page (see mokup below).
 ![Mockup](/use-case-best-practices/vacation-management/mockup.png?raw=true "Mockup for the review vacation page") 
 
