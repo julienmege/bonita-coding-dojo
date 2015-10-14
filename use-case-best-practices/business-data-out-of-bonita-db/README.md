@@ -7,6 +7,12 @@
 
 ## Use case
 
+* As an employee, I need a web page,  In order to request my annual leave 
+* As a manager, I need a dashboard,  In order to have a team view of leave requests
+ 
+
+## Steps
+
 * create a contract on task "Submit a new leave request"
     - startDate (DATE)
     - endDate (DATE)
@@ -25,7 +31,7 @@
 * parameters to connect to businessdata base : [postgresql.properties](postgresql.properties)
 * postgres driver : [driver/postgresql-9.3-1102-jdbc41.jar](driver/postgresql-9.3-1102-jdbc41.jar)
 
-## database model
+## Database model
 
 ```sql
 CREATE TABLE leave_request
