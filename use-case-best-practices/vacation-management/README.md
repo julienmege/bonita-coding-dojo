@@ -19,16 +19,62 @@ and you need to generate a [license](https://v2.customer.bonitasoft.com/license/
 ![exercice](./part1_overview.jpg?raw=true "exercice overview") 
 
 
-##Step by step Exercice:
+##Step by step:
 
-1- import the .bos file contains in the "vacation-management" folder.
-it contains all the process, BDM and the organization to manage vacation request.
+Topics: Living application, custom page, BDM & rest api extension
 
-2- Start the process [InitiateVacationAvailable] to setup the number of vacations for the members of the organization.
+- Download and install studio 7.1.2
+- `git clone git@github.com:julienmege/bonita-coding-dojo.git`
+- Import the .bos file contains in the "vacation-management" folder. It contains all the process, BDM and the organization to manage vacation request.
+- Run `InitiateVacationAvailable` as walter.bates to setup the number of vacations for the members of the organization.
+- Run `NewVacationRequest` as walter.bates to get some data going.
 
-3- implement the rest API that build an object based on [Vacation request] and [Vacation business data].
+### Step 1
+Build the UI which list helen.kelly tasks
+URL to grad Review request for current user
+Current user: `../API/system/session/current`
+Task Review request: `../API/bpm/humanTask?p=0&c=10&o=priority=DESC&f=state=ready&f=user_id={{user.user_id}}&f=name=Review Request`
 
-4- implement the custom page using the UI-Designer base on the previous Rest API
+/!\ Don't waste to much time on approve/refuse all request tool bar.
 
+### Step 2
+Mock what you need to update UI as required
+Rest API will return
+```JSON
+[
+    {
+        "task": {
+	          "id": 7
+        },
+        "vacationRequest": {
+            "comments": null,
+            "requesterBonitaBPMId": 4,
+            "startDate": "2015-10-15T00:00:00+0000",
+            "numberOfDays": 1,
+            "returnDate": "2015-10-15T00:00:00+0000"
+        }
+    }
+]
+```
 
+### Step 3
+Build Rest API Extension to attach BDM information to task
+- Documentation http://documentation.bonitasoft.com/how-access-and-display-business-data-custom-page-0
+- Seed https://github.com/Bonitasoft-Community/rest-api-sql-data-source
+- Permissions `task_visualization`
+- Url to access `../API/extension/reviewRequests`
 
+### Step 4
+Wire all up.
+
+### Step 5
+Execute tasks 
+```
+POST {“status”: “approved”, “comment”: “Ok”} ../API/bpm/userTask/{{ $item.task.id }}/execution
+```
+Use fragment to have comment per task
+
+/!\ POST doesn't work in the UI Designer due to some redirection issues
+
+### Step 6
+Create living app to let helen kelly use the Review Vacation Requests application.
