@@ -4,7 +4,34 @@
 
 * leave request with Postgres business database
 
-## database model
+
+## Use case
+
+* As an employee, I need a web page,  In order to request my annual leave 
+* As a manager, I need a dashboard,  In order to have a team view of leave requests
+ 
+
+## Steps
+
+* create a contract on task "Submit a new leave request"
+    - startDate (DATE)
+    - endDate (DATE)
+    - kind (TEXT)
+    
+* create a form using UI Designer
+    
+* use postgres database connector to insert data and set process variable with the generated request_id
+
+* bonus: add living app to display requests using examples: [page-apiExtensionDatasourceViewer.zip](page-apiExtensionDatasourceViewer.zip) and [Application_Data.xml](Application_Data.xml)
+
+
+## Setup
+
+* import .bos downloaded from http://www.bonitasoft.com/for-you-to-read/process-library/employee-leave-management : [leave-management-bpmn-model.bos](leave-management-bpmn-model.bos)
+* parameters to connect to businessdata base : [postgresql.properties](postgresql.properties)
+* postgres driver : [driver/postgresql-9.3-1102-jdbc41.jar](driver/postgresql-9.3-1102-jdbc41.jar)
+
+## Database model
 
 ```sql
 CREATE TABLE leave_request
@@ -39,7 +66,9 @@ RTT
 Annual leave 
 ```
 
-request_id serial fiel create implicite sequence leave_request_request_id_seq
+### Sql tips
+
+setting request_id type to *serial* creates a sequence with default name "leave_request_request_id_seq"
 
 ```sql
 CREATE SEQUENCE leave_request_request_id_seq
@@ -49,8 +78,6 @@ CREATE SEQUENCE leave_request_request_id_seq
   START 1
   CACHE 1;
 ```  
-
-### Sql tips
  
 get next sequence value:
 ```sql
@@ -65,23 +92,3 @@ INSERT INTO "leave_request" ("user_id", "start_date", "end_date",
 
 select currval('leave_request_request_id_seq');
 ```
-
-## Setup
-
-* import .bos downloaded from http://www.bonitasoft.com/for-you-to-read/process-library/employee-leave-management : [leave-management-bpmn-model.bos](leave-management-bpmn-model.bos)
-* parameters to connect to businessdata base : [postgresql.properties](postgresql.properties)
-* postgres driver : [driver/postgresql-9.3-1102-jdbc41.jar](driver/postgresql-9.3-1102-jdbc41.jar)
-
-
-## Use case
-
-* create a contract on task "Submit a new leave request"
-    - startDate (DATE)
-    - endDate (DATE)
-    - kind (TEXT)
-    
-* create a form using UI Designer
-    
-* use postgres database connector to insert data and set process variable with the generated request_id
-
-* bonus: add living app to display requests using examples: [page-apiExtensionDatasourceViewer.zip](page-apiExtensionDatasourceViewer.zip) and [Application_Data.xml](Application_Data.xml)
