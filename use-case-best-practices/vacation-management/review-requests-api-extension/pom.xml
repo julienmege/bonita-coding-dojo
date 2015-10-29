@@ -18,22 +18,6 @@
         </repository>
     </repositories>
     <dependencies>
-
-        <dependency>
-            <groupId>org.bonitasoft.bdm</groupId>
-            <artifactId>bdm-dao</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/lib/bdm-dao.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.bonitasoft.bdm</groupId>
-            <artifactId>bdm-model</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/lib/bdm-model.jar</systemPath>
-        </dependency>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
