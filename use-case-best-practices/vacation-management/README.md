@@ -61,7 +61,7 @@ To finish the UI you can mock the REST API resource with the following JSON.
 Label `{{ $item.vacationRequest.numberOfDays }} days from {{ $item.vacationRequest.startDate | date:'dd/MM/yy' }} to {{ $item.vacationRequest.returnDate | date:'dd/MM/yy'}}`
 
 ### Step 3
-Build Rest API Extension to attach BDM information to task. We trying to something looking like:
+Build Rest API Extension to attach BDM information to task. We are trying to return something like:
 ```JSON
 [
     {
@@ -123,7 +123,7 @@ URL: `../API/extension/reviewRequests`
 We now need to implement tasks execution to approve or refuse vacation requests.
 - Verb: `POST``
 - URL to call: `../API/bpm/userTask/{{ $item.task.id }}/execution`
-- Data to send: `{“status”: “approved”, “comment”: “Ok”}`
+- Data to send: `{"status": "approved", "comments": "Ok"}`
 
 /!\ POST doesn't work in the UI Designer during preview due to some redirection issues but it should work fine once in the Portal.
 
