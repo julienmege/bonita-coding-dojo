@@ -125,7 +125,5 @@ We now need to implement tasks execution to approve or refuse vacation requests.
 - URL to call: `../API/bpm/userTask/{{ $item.task.id }}/execution`
 - Data to send: `{"status": "approved", "comments": "Ok"}`
 
-/!\ POST doesn't work in the UI Designer during preview due to some redirection issues but it should work fine once in the Portal.
-
 ### Step 6
 Create living app to let helen kelly use the Review Vacation Requests application.
