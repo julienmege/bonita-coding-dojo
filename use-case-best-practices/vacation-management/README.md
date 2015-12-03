@@ -33,7 +33,7 @@ Topics: Living application, custom page, BDM & rest api extension
 ### Step 1
 Build a custom page which list current user Review Request tasks.
 - Grab current user: `../API/system/session/current`
-- List review request tasks: `../API/bpm/humanTask?p=0&c=10&o=priority=DESC&f=state=ready&f=user_id={{user.user_id}}&f=name=Review Request`
+- List review request tasks: `../API/bpm/humanTask?p=0&c=10&o=priority=DESC&f=state=ready&f=user_id={{user.user_id}}&f=name=Review request`
 
 /!\ Don't waste to much time on approve/refuse all request tool bar.
 /!\ Table/DataTable widgets doesn't support actions. Containers do.
